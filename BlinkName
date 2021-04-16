@@ -1,0 +1,94 @@
+// ------------
+// Blink an LED with Last Name in Morse Code
+// ------------
+
+int led = D7; 
+
+void setup() {
+    pinMode(led, OUTPUT);
+}
+
+void loop() {
+
+	  //P
+    
+    digitalWrite(led, HIGH);
+    delay(2000);
+    digitalWrite(led, LOW);
+    delay(1000);
+    digitalWrite(led, HIGH);
+    delay(500); 
+    digitalWrite(led, LOW);  
+    delay(500);
+    digitalWrite(led, HIGH);
+    delay(1000);
+    digitalWrite(led, LOW);  
+    delay(2000);
+    
+    digitalWrite(led, LOW);  
+    delay(250);
+    
+    //E
+    
+    digitalWrite(led, HIGH);
+    delay(2000);
+    digitalWrite(led, LOW);  
+    delay(1000);
+    digitalWrite(led, HIGH);
+    delay(2000);
+    
+    digitalWrite(led, LOW);  
+    delay(250);
+   
+    //R
+    
+    digitalWrite(led, HIGH);
+    delay(1000);
+    digitalWrite(led, LOW);  
+    delay(500);
+    digitalWrite(led, HIGH);
+    delay(1000);
+    
+    digitalWrite(led, LOW);  
+    delay(250);
+    
+    //E
+    
+    digitalWrite(led, HIGH);
+    delay(2000);
+    digitalWrite(led, LOW);  
+    delay(1000);
+    digitalWrite(led, HIGH);
+    delay(2000);
+    
+    digitalWrite(led, LOW);  
+    delay(250);
+    
+    //R
+    
+    digitalWrite(led, HIGH);
+    delay(1000);
+    digitalWrite(led, LOW);  
+    delay(500);
+    digitalWrite(led, HIGH);
+    delay(1000);
+    
+    digitalWrite(led, LOW);  
+    delay(250);
+    
+    //A
+    
+    digitalWrite(led, HIGH);
+    delay(1000);
+    digitalWrite(led, LOW);  
+    delay(500);
+    digitalWrite(led, HIGH);
+    delay(2000);
+    
+    digitalWrite(led, LOW);  
+    delay(250);
+    
+    //END
+    digitalWrite(led, LOW);
+    delay(10000);
+}
