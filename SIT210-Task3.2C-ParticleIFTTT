@@ -1,0 +1,18 @@
+#define light_sensor = A0;
+#define LIGHT_LEVEL_THRESHOLD 800 
+
+void setup() {
+} 
+
+void loop() { 
+   int darkness =  random(7, 9) * 100; 
+   
+   if (darkness >= LIGHT_LEVEL_THRESHOLD) { 
+       Particle.publish("light_change_level", "DARK");
+       delay(2000);
+       
+   } else { 
+       Particle.publish("light_change_level", "SUFFICIENT LIGHT"); 
+       delay(2000);
+   } 
+} 
