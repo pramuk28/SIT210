@@ -4,14 +4,14 @@ from time import sleep
 
 GPIO.setwarnings(False)
 
-red = 5
-green = 10
-blue = 15
+red = 19
+green = 24
+blue = 23
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(red,GPIO.OUT)
-GPIO.setup(green,GPIO.OUT)
-GPIO.setup(blue,GPIO.OUT)
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(red,GPIO.OUT,initial=GPIO.LOW)
+GPIO.setup(green,GPIO.OUT,initial=GPIO.LOW)
+GPIO.setup(blue,GPIO.OUT,initial=GPIO.LOW)
 
 root= tk.Tk()
 root.title("GUI - 3 LED Blink ")
@@ -27,11 +27,11 @@ def TurnOn():
 
 var= tk.IntVar()
 
-led1 = tk.Radiobutton(root, text ="red",bg="red", variable=var,value=5, command=TurnOn).pack()
-led2 = tk.Radiobutton(root, text ="green",bg="blue", variable=var,value =10, command=TurnOn).pack()
-led3 = tk.Radiobutton(root, text ="blue",bg="green", variable=var,value =15, command=TurnOn).pack()
+led1 = tk.Radiobutton(root, text ="RED",bg="red", variable=var,value=5, command=TurnOn).pack()
+led2 = tk.Radiobutton(root, text ="GREEN",bg="blue", variable=var,value =10, command=TurnOn).pack()
+led3 = tk.Radiobutton(root, text ="BLUE",bg="green", variable=var,value =15, command=TurnOn).pack()
 
-tk.Exitbutton = tk.Button(root, text="Exit",bg="yellow", command=root.destroy).pack()
+tk.Exitbutton = tk.Button(root, text="EXIT",bg="yellow", command=root.destroy).pack()
 
 root.mainloop()
 
