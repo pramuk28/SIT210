@@ -41,7 +41,7 @@ void reportTheData() {
         // Publishing an event to notify the owner
         if (pirState == LOW) {
           // we have just turned on
-          Particle.publish("motion", "1" , PRIVATE);
+          Particle.publish("motion", "ACTIVE" , PRIVATE);
           // Update the current state
           pirState = HIGH;
           setLED(pirState);
@@ -50,7 +50,7 @@ void reportTheData() {
         if (pirState == HIGH) {
           // turned off
           // Update on current state
-          Particle.publish("motion", "0", PRIVATE);
+          Particle.publish("motion", "INACTIVE", PRIVATE);
           pirState = LOW;
           setLED(pirState);
         }
