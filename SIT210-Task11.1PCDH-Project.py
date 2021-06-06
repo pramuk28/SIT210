@@ -1,13 +1,13 @@
-int inputPin = D9;              // choose the input pin (for PIR sensor)
-int ledPin = D3;                // LED Pin
-int pirState = LOW;             // we start, assuming no motion detected
-int val = 0;                    // variable for reading the pin status
+int inputPin = D9;     // input pin (for PIR sensor)
+int ledPin = D3;       // LED Pin
+int pirState = LOW;    // Assumption of no movement
+int val = 0;           
 
-int calibrateTime = 5000;      // wait for the thingy to calibrate
+int calibrateTime = 3000;      // waitinng for calibration
 
 void setup() {
     pinMode(ledPin, OUTPUT);
-    pinMode(inputPin, INPUT);     // declare sensor as input
+    pinMode(inputPin, INPUT);     
 }
 
 void loop() {
@@ -38,7 +38,7 @@ void reportTheData() {
     if (val == HIGH) {
         // the current state is no motion
         // i.e. it's just changed
-        // announce this change by publishing an event
+        // Publishing an event to notify the owner
         if (pirState == LOW) {
           // we have just turned on
           Particle.publish("motion", "1" , PRIVATE);
@@ -48,8 +48,8 @@ void reportTheData() {
         }
           } else {
         if (pirState == HIGH) {
-          // we have just turned of
-          // Update the current state
+          // turned off
+          // Update on current state
           Particle.publish("motion", "0", PRIVATE);
           pirState = LOW;
           setLED(pirState);
